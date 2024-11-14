@@ -13,7 +13,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0)
     }
-
+    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -27,18 +27,17 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className="container px-4 mx-auto">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between"> {/* Increased height */}
           {/* Logo */}
           <div className={styles['logo-container']}>
-            <a href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
-              <MousePointer className="h-6 w-6 text-[var(--primary-color)]" />
+            <a href="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity">
               <span className={styles['logo-text']}>Leaps</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex items-center gap-6">
+          <nav className="hidden lg:block"> {/* Changed from md:block to lg:block */}
+            <ul className="flex items-center gap-8"> {/* Increased gap */}
               {menuItems.map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href} className={styles['nav-link']}>
@@ -52,16 +51,16 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={styles['mobile-menu-button']}
+            className={`${styles['mobile-menu-button']} lg:hidden`}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
             aria-label="Toggle menu"
           >
             <span className="sr-only">Toggle menu</span>
             {isMenuOpen ? (
-              <X className="h-5 w-5" aria-hidden="true" />
+              <X className="h-6 w-6" aria-hidden="true" />
             ) : (
-              <Menu className="h-5 w-5" aria-hidden="true" />
+              <Menu className="h-6 w-6" aria-hidden="true" /> 
             )}
           </button>
         </div>
@@ -70,13 +69,14 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className={styles['mobile-menu']}>
-          <div className="container px-4 py-4">
-            <nav className="flex flex-col space-y-4">
+          <div className="container px-4 py-6"> {/* Increased padding */}
+            <nav className="flex flex-col space-y-6"> {/* Increased spacing */}
               {menuItems.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
                   className={styles['nav-link']}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {label}
                 </Link>

@@ -10,3 +10,4 @@ echo "node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*" > .gitignore
+node_modules

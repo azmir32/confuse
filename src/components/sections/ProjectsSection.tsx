@@ -5,11 +5,16 @@ import Link from 'next/link';
 
 export default function ProjectsSection() {
   return (
-    <section className="py-20 bg-custom-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-custom-primary font-header">
-          My Projects
-        </h2>
+        {/* Modified heading section with improved styling */}
+        <div className="text-center mb-16"> {/* Increased bottom margin */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-custom-primary font-header">
+            My Projects
+          </h2>
+          <div className="w-24 h-1 bg-highlight mx-auto mt-4"/> {/* Optional decorative line */}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div 

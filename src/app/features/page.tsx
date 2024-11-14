@@ -1,10 +1,25 @@
-import React from 'react';
+'use client'
+
+import { motion } from 'framer-motion'
+import {
+  HeroSection,
+  TechnicalSkills,
+  Testimonials,
+  CallToAction
+} from '@/components/sections/FeaturesSection'
 
 export default function FeaturesPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Features Page</h1>
-      {/* Add your features page content here */}
-    </main>
-  );
+    <motion.main 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="relative"
+    >
+      <HeroSection />
+      <TechnicalSkills />
+      <Testimonials />
+      <CallToAction />
+    </motion.main>
+  )
 }

@@ -1,3 +1,19 @@
+import { LucideIcon } from 'lucide-react';
+import { IconType } from 'react-icons';
+
+// Combined Skill interface taking the best from both versions
+export interface Skill {
+  id: number;
+  name: string;
+  // Combined categories from both interfaces
+  category: 'frontend' | 'backend' | 'tools' | 'other';
+  // Made icon optional and supports multiple icon types
+  icon?: LucideIcon | IconType | string;
+  // Explicitly commented range for clarity
+  proficiency: number; // Scale of 1-100
+}
+
+// Kept Project interface as is since it wasn't duplicated
 export interface Project {
   id: number;
   title: string;
@@ -7,14 +23,3 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
 }
-
-export interface Skill {
-  id: number;
-  name: string;
-  category: 'frontend' | 'backend' | 'tools' | 'other';
-  icon?: string;
-  proficiency: number; // 1-100
-}
-
-// Consider adding more specific types for function props and responses
-// Add proper documentation for type definitions 

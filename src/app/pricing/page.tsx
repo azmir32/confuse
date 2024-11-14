@@ -42,13 +42,14 @@ const faqs = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-background-color">
+    <div className="min-h-screen">
       <main className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-primary-color font-header sm:text-5xl sm:tracking-tight lg:text-6xl">
             Choose Your Plan
           </h1>
-          <p className="mt-4 max-w-xl mx-auto text-xl text-text font-body">
+          {/* Increased subtitle text size */}
+          <p className="mt-4 max-w-xl mx-auto text-2xl text-text font-body">
             Select the perfect plan for your needs and start growing your business today.
           </p>
         </div>
@@ -62,30 +63,33 @@ export default function PricingPage() {
               }`}
             >
               {tier.popular && (
-                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 bg-highlight text-accent-color px-4 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 bg-highlight text-accent-color px-4 py-1 rounded-full text-base font-semibold">
                   Most Popular
                 </div>
               )}
               <div className="mb-4">
-                <h3 className="text-lg font-semibold font-header text-primary-color leading-5">
+                {/* Increased tier name size */}
+                <h3 className="text-xl font-semibold font-header text-primary-color leading-6">
                   {tier.name}
                 </h3>
                 <p className="mt-4 flex items-baseline text-text">
-                  <span className="text-5xl font-extrabold tracking-tight">${tier.price}</span>
-                  <span className="ml-1 text-xl font-semibold">/month</span>
+                  <span className="text-6xl font-extrabold tracking-tight">${tier.price}</span>
+                  <span className="ml-1 text-2xl font-semibold">/month</span>
                 </p>
               </div>
+              {/* Increased features text size */}
               <ul className="mt-6 space-y-4 flex-1">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex font-body">
-                    <Check className="flex-shrink-0 w-5 h-5 text-highlight" />
+                  <li key={feature} className="flex font-body text-lg">
+                    <Check className="flex-shrink-0 w-6 h-6 text-highlight" />
                     <span className="ml-3 text-text">{feature}</span>
                   </li>
                 ))}
               </ul>
+              {/* Increased CTA button text size */}
               <Link
                 href="#"
-                className={`mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium ${
+                className={`mt-8 block w-full py-4 px-6 border border-transparent rounded-md text-center font-medium text-lg ${
                   tier.popular
                     ? 'bg-primary-color text-accent-color hover:bg-highlight'
                     : 'bg-extra-accent text-primary-color hover:bg-highlight hover:text-accent-color'
@@ -104,12 +108,14 @@ export default function PricingPage() {
           <div className="mt-12 space-y-8">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-accent-color shadow overflow-hidden rounded-lg">
-                <div className="px-4 py-5 sm:p-6">
-                  <dt className="text-lg font-medium text-primary-color flex items-center font-header">
-                    <HelpCircle className="flex-shrink-0 mr-2 h-5 w-5 text-highlight" />
+                <div className="px-6 py-6 sm:p-8">
+                  {/* Increased FAQ question size */}
+                  <dt className="text-xl font-medium text-primary-color flex items-center font-header">
+                    <HelpCircle className="flex-shrink-0 mr-3 h-6 w-6 text-highlight" />
                     {faq.question}
                   </dt>
-                  <dd className="mt-2 text-base text-text font-body">
+                  {/* Increased FAQ answer size */}
+                  <dd className="mt-5 text-lg text-text font-body leading-relaxed">
                     {faq.answer}
                   </dd>
                 </div>

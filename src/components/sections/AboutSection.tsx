@@ -42,7 +42,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section className="relative w-full overflow-hidden bg-slate-50 py-24">
+    <section>
       <div 
         className="absolute inset-0 opacity-50" 
         style={{
@@ -68,7 +68,7 @@ export default function AboutSection() {
                 href="/aboutMe"
                 className="group mt-4 inline-block cursor-pointer transition-all duration-200 ease-in-out"
               >
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900 transition-all duration-200 ease-in-out group-hover:text-blue-600 group-hover:scale-105 sm:text-4xl">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 transition-all duration-200 ease-in-out group-hover:text-blue-600 group-hover:scale-105">
                   About Me
                 </h2>
                 <span className="block h-0.5 max-w-0 bg-blue-600 transition-all duration-200 group-hover:max-w-full"></span>

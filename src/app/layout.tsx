@@ -13,8 +13,8 @@ const markaziText = Markazi_Text({
 })
 
 export const metadata: Metadata = {
-  title: 'Your Site',
-  description: 'Your description',
+  title: 'Leaps',
+  description: 'Help you Leaps FORWARD',
 }
 
 export default function RootLayout({
